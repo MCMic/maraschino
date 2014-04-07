@@ -79,6 +79,31 @@ AVAILABLE_MODULES = [
         ]
     },
     {
+        'name': 'mpd',
+        'label': 'Manager - mpd',
+        'description': 'Manage mpd from within Maraschino',
+        'static': False,
+        'poll': 10,
+        'delay': 0,
+        'settings': [
+             {
+                'key': 'mpd_host',
+                'value': 'localhost',
+                'description': 'Mpd Hostname',
+            },
+            {
+                'key': 'mpd_port',
+                'value': '6600',
+                'description': 'Mpd Port',
+            },
+            {
+                'key': 'mpd_password',
+                'value': '',
+                'description': 'Mpd Password',
+            },
+        ]
+    },
+    {
         'name': 'headphones',
         'label': 'Manager - Headphones',
         'description': 'Manage Headphones from within Maraschino',

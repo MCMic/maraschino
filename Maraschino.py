@@ -50,6 +50,7 @@ def import_modules():
     import modules.currently_playing
     import modules.diskspace
     import modules.headphones
+    import modules.maraschino_mpd
     import modules.index
     import modules.library
     import modules.log

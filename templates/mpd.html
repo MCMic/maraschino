@@ -1,0 +1,16 @@
+{% extends "mpd/base.html" %}
+{% block mpd_content %}
+
+  <div class="playing noscroll">
+    <div>
+      {% if current != 'empty' %}
+          <h3>{{ current.title }}</h3>
+          <span>By <strong>{{ current.artist }}</strong> From <strong>{{ current.album }}</strong></span>
+          <div style="margin-top:3px;" class="bar" title="{{ status.progress }}%"><div class="inner" style="width: {{ status.progress }}%;"></div></div>
+      {% else %}
+          <span>nothing</span>
+      {% endif %}
+    </div>
+  </div>
+
+{% endblock %}

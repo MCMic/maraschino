@@ -1,0 +1,37 @@
+{% if mpd %}
+  <div id="mpd" class="module{% if compact_view %} compact{% endif %}" data-module="mpd">
+    <div class="module_settings"><span>Settings</span></div>
+    <div class="module_remove"><span>Remove</span></div>
+
+    <h2 class="title">
+      <a href="{{ app_link }}" class="app_link" target="_blank">Music Player Daemon</a>
+    </h2>
+
+    <ul class="mpd_head menu operation_only">
+      <li class="head_item get {{ 'highlight' if playing }}" data-url="/playing" title="Playing">
+        <span style="background-image:url({{ url_for('static', filename='images/coming.png') }})"/>
+      </li>
+    </ul>
+
+    {% block mpd_content %}{% endblock %}
+
+    {% if message %}
+      {{ message }}
+    {% endif %}
+
+    <div class="controls settings_only">
+      <a class="control" data-control="shutdown" title="Shutdown"><img src="{{ url_for('static', filename='images/shutdown.png') }}" width="14" height="14"/></a>
+      <a class="control" data-control="restart" title="Restart"><img src="{{ url_for('static', filename='images/reboot.png') }}" width="14" height="14"/></a>
+    </div>
+  </div>
+{% else %}
+
+  <div class="placeholder" data-module="mpd">
+    <div class="module_settings"><span>Settings</span></div>
+    <div class="module_remove"><span>Remove</span></div>
+    <h2>MPD</h2>
+  </div>
+
+{% endif %}
+
+
